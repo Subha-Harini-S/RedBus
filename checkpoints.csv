@@ -1,0 +1,11 @@
+BusID,Checkpoint1,Checkpoint2,Checkpoint3,Checkpoint4
+101,Vellore,Krishnagiri,Hosur,Electronic City
+102,Nellore,Ongole,Vijayawada,Khammam
+103,Hosur,Krishnagiri,Vellore,Kanchipuram
+104,Anantapur,Kurnool,Raichur,Mahbubnagar
+105,Tumkur,Davangere,Hubli,Pune
+106,Nellore,Ongole,Gudur,Kanchipuram
+107,Raichur,Kurnool,Anantapur,Hosur
+108,Pune,Kolhapur,Hubli,Davangere
+109,Pune,Hubli,Krishnagiri,Vellore
+110,Vellore,Krishnagiri,Hubli,Pune

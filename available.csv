@@ -1,0 +1,11 @@
+BusID,From,To,Date,Time,Seats,Boarding,Drop,Amount
+101,Chennai,Bangalore,2025-08-25,06:00,40,Chennai Central,Bangalore Majesti,899
+102,Chennai,Hyderabad,2025-08-25,07:30,35,Chennai Egmore,Hyderabad MGBS,2999
+103,Bangalore,Chennai,2025-08-25,09:00,45,Bangalore Majestic,Chennai Central,1743
+104,Bangalore,Hyderabad,2025-08-25,08:15,30,Bangalore Majestic,Hyderabad MGBS,1234
+105,Bangalore,Mumbai,2025-08-25,10:00,53,Bangalore Majestic,Mumbai Dadar,1245
+106,Hyderabad,Chennai,2025-08-25,11:00,50,Hyderabad MGBS,Chennai Central,900
+107,Hyderabad,Bangalore,2025-08-25,13:00,48,Hyderabad MGBS,Bangalore Majestic,654
+108,Mumbai,Bangalore,2025-08-25,14:30,52,Mumbai Dadar,Bangalore Majestic,789
+109,Mumbai,Chennai,2025-08-25,15:45,39,Mumbai Dadar,Chennai Central,987
+110,Chennai,Mumbai,2025-08-25,16:30,35,Chennai Central,Mumbai Dadar,899
