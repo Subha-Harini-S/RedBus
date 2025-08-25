@@ -231,7 +231,6 @@ bool bookSeat(string phone) {
         }
     }
     saveBuses(all);
-
     ofstream fout("tickets.csv", ios::app);
     for(auto &p:passengers) {
         string ticketId ="T"+to_string(rand() % 10000);
@@ -253,34 +252,51 @@ bool bookSeat(string phone) {
     return true;
 }
 
-#include <chrono>
-#include <thread>
 int main() {
     srand(time(0));
     if (!fileExists("users.csv")) ofstream("users.csv").close();
     if (!fileExists("tickets.csv")) ofstream("tickets.csv").close();
     string loggedPhone;
-    cout<<"Welcome to Bus Booking System\n";
-    while(true) {
-        cout<<"\n1. Register\n2. Login\n3. Exit\nChoice: ";
-        int ch; 
-        cin>>ch;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        if (ch ==1) registerUser();
-        else if (ch ==2) {
+    cout << "Welcome to Bus Booking System\n";
+    while (true) {
+        int ch;
+        while (true) {
+            cout << "\n1. Register\n2. Login\n3. Exit\nChoice: ";
+            cin >> ch;
+            if (cin.fail() || ch < 1 || ch > 3) {
+                cout << "Invalid choice! Please enter 1, 2, or 3.\n";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            } else {
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                break;
+            }
+        }
+        if (ch == 1) {
+            registerUser();
+        } else if (ch == 2) {
             if (loginUser(loggedPhone)) {
                 int sub;
-                do{
-                    cout <<"\n1. Book Ticket\n2. Logout\nChoice: ";
-                    cin>>sub;
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    if (sub ==1) bookSeat(loggedPhone);
-                } while (sub !=2);
+                do {
+                    while (true) {
+                        cout << "\n1. Book Ticket\n2. Logout\nChoice: ";
+                        cin >> sub;
+                        if (cin.fail() || sub < 1 || sub > 2) {
+                            cout << "Invalid choice! Please enter 1 or 2.\n";
+                            cin.clear();
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        } else {
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+                            break;
+                        }
+                    }
+                    if (sub == 1) bookSeat(loggedPhone);
+                } while (sub != 2);
             }
         } else if (ch == 3) {
-            cout <<"Hope you enjoyed the travel experience\n"; break;
-        } else cout <<"Invalid choice!\n";
+            cout << "Hope you enjoyed the travel experience\n";
+            break;
+        }
     }
     return 0;
 }
- 
